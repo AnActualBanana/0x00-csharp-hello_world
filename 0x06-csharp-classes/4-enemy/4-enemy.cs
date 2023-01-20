@@ -27,7 +27,7 @@ namespace Enemies
         ///<summary> name </summary>
         private string name = "(No name)";
         ///<summary> name property(getter and setter) </summary>
-        public string name
+        public string Name
         {
             get
             {
