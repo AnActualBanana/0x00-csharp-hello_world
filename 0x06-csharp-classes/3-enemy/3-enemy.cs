@@ -24,7 +24,7 @@ namespace Enemies
                 throw new ArgumentException("Health must be greater than or equal to 0");
             }
         }
-        ///method that returns the value of health of the Zombie object. </summary>
+        ///<summary> method that returns the value of health of the Zombie object. </summary>
         public int GetHealth()
         {
             return health;
