@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 
-///<summary>Class for object testing</summary>
+///<summary>Class for object</summary>
 class Obj
 {
-	///<summary>check if its an integrer</summary>
+	///<summary>checks is obj is an int</summary>
 	///<returns>True or false</returns>
 	public static bool IsOfTypeInt(object obj)
 	{
