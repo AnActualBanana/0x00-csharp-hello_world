@@ -9,4 +9,4 @@ class Obj
     {
         return derivedType.IsSubclassOf(baseType);
     }
-}\
+}
