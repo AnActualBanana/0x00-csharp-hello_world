@@ -1,17 +1,20 @@
 using System;
 
-public static double[,] Transpose(double[,] matrix)
+public class MatrixMath
 {
-    int rows = matrix.GetLength(0);
-    int columns = matrix.GetLength(1);
-    double[,] transposedMatrix = new double[columns, rows];
-
-    for (int i = 0; i < rows; i++)
+    public static double[,] Transpose(double[,] matrix)
     {
-        for (int j = 0; j < columns; j++)
+        int rows = matrix.GetLength(0);
+        int columns = matrix.GetLength(1);
+        double[,] transposedMatrix = new double[columns, rows];
+
+        for (int i = 0; i < rows; i++)
         {
-            transposedMatrix[j, i] = matrix[i, j];
+            for (int j = 0; j < columns; j++)
+            {
+                transposedMatrix[j, i] = matrix[i, j];
+            }
         }
+        return transposedMatrix;
     }
-    return transposedMatrix;
 }
