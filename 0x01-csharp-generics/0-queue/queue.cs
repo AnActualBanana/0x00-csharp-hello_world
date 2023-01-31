@@ -1,3 +1,5 @@
+using System;
+
 /// <summary>
 /// Queue&lt;T&gt; class implements a generic queue data structure.
 /// </summary>
