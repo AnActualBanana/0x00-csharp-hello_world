@@ -1,1 +1,1 @@
-# 0x00-csharp-hello_world
+For Holberton School's csharp projects
