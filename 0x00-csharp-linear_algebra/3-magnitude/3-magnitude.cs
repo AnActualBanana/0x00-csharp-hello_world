@@ -1,19 +1,20 @@
 using System;
 
-namespace VectorMath
+class VectorMath
 {
-    public class Vector
+    public static double Magnitude(double[] vector)
     {
-        public static double Magnitude(double[] vector)
+        if (vector.Length == 2)
         {
-            if (vector.Length != 2 && vector.Length != 3)
-                return -1;
-
-            double sumOfSquares = 0;
-            foreach (double component in vector)
-                sumOfSquares += component * component;
-
-            return Math.Round(Math.Sqrt(sumOfSquares), 2);
+            return Math.Round(Math.Sqrt(Math.Pow(vector[0], 2) + Math.Pow(vector[1], 2)), 2);
+        }
+        else if (vector.Length == 3)
+        {
+            return Math.Round(Math.Sqrt(Math.Pow(vector[0], 2) + Math.Pow(vector[1], 2) + Math.Pow(vector[2], 2)), 2);
+        }
+        else
+        {
+            return -1;
         }
     }
 }
