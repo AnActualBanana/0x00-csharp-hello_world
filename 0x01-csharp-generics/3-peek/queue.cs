@@ -1,77 +1,82 @@
 using System;
 
-public class Queue<T>
+///<summary>Class for que opperations</summary>
+class Queue<T>
 {
-    private class Node
-    {
-        public T value;
-        public Node next;
+	//Setting node for queues
+	public class Node
+	{
+		public T value = default(T);
+		public Node next = null;
 
-        public Node(T value)
-        {
-            this.value = value;
-            this.next = null;
-        }
-    }
+		public Node(T input)
+		{
+			value = input;
+		}
+	}
 
-    private Node head;
-    private Node tail;
-    private int count;
+	public Node head;
+	public Node tail;
+	public int count;
 
-    public Queue()
-    {
-        head = null;
-        tail = null;
-        count = 0;
-    }
+	///<summary>Add new node at the end</summary>
+	public void Enqueue(T value)
+	{
+		Node node = new Node(value);
+		if (head == null)
+		{
+			head = node;
+			tail = node;
+		}
+		else
+		{
+			tail.next = node;
+			tail = node;
+		}
+		count++;
+	}
 
-    public void Enqueue(T value)
-    {
-        Node newNode = new Node(value);
-        if (head == null)
-        {
-            head = newNode;
-            tail = newNode;
-        }
-        else
-        {
-            tail.next = newNode;
-            tail = newNode;
-        }
-        count++;
-    }
+	///<summary>Add deleting the last node</summary>
+	public T Dequeue()
+	{
+		if (head == null)
+		{
+			Console.WriteLine("Queue is empty");
+			return default(T);
+		}
+		else
+		{
+			T value = head.value;
+			head = head.next;
+			count--;
+			return value;
+		}
+	}
 
-    public int Count()
-    {
-        return count;
-    }
+	///<summary>Return the value of first node</summary>
+	public T Peek()
+	{
+		if (head == null)
+		{
+			Console.WriteLine("Queue is empty");
+			return default(T);
+		}
+		else
+		{
+			return head.value;
+		}
+	}
 
-    public T Dequeue()
-    {
-        if (head == null)
-        {
-            Console.WriteLine("Queue is empty");
-            return default(T);
-        }
-        else
-        {
-            Node temp = head;
-            head = head.next;
-            count--;
-            return temp.value;
-        }
-    }
+	///<summary>Add new node at the end</summary>
+	public int Count()
+	{
+		return count;
+	}
 
-    public T Peek()
-    {
-        if (head == null)
-        {
-            Console.WriteLine("Queue is empty");
-            return default(T);
-        }
-        else
-        {
-            return head.value;
-        }
-    }
+	///<summary>Check if its a queue type</summary>
+	///<return>returns a Queue type</return>
+	public Type CheckType()
+	{
+		return typeof(T);
+	}
 }
