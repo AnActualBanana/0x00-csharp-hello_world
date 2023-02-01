@@ -1,3 +1,5 @@
+using System;
+
 public abstract class Base
 {
     public string name { get; set; }
