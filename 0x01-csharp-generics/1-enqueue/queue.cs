@@ -1,51 +1,48 @@
 using System;
 
-namespace QueueProject
+public class Queue<T>
 {
-    public class Queue<T>
+    private class Node
     {
-        private class Node
+        public T value;
+        public Node next;
+
+        public Node(T value)
         {
-            public T value;
-            public Node next;
-
-            public Node(T value)
-            {
-                this.value = value;
-                next = null;
-            }
+            this.value = value;
+            next = null;
         }
+    }
 
-        private Node head;
-        private Node tail;
-        private int count;
+    private Node head;
+    private Node tail;
+    private int count;
 
-        public Queue()
+    public Queue()
+    {
+        head = null;
+        tail = null;
+        count = 0;
+    }
+
+    public void Enqueue(T value)
+    {
+        Node newNode = new Node(value);
+        if (head == null)
         {
-            head = null;
-            tail = null;
-            count = 0;
+            head = newNode;
+            tail = newNode;
         }
-
-        public void Enqueue(T value)
+        else
         {
-            Node newNode = new Node(value);
-            if (head == null)
-            {
-                head = newNode;
-                tail = newNode;
-            }
-            else
-            {
-                tail.next = newNode;
-                tail = newNode;
-            }
-            count++;
+            tail.next = newNode;
+            tail = newNode;
         }
+        count++;
+    }
 
-        public int Count()
-        {
-            return count;
-        }
+    public int Count()
+    {
+        return count;
     }
 }
